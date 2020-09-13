@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-Check out the live demo [here](http://localhost:3000)
+Check out the live demo [here](https://reactjs-calculator-sergiomauz.herokuapp.com/)
 
 
 ## Getting started
@@ -18,7 +18,6 @@ Check out the live demo [here](http://localhost:3000)
 ### Pre Requisites
 
 - Install Node JS. ([NodeJS Documentation](https://nodejs.org/en/docs/)) 
-- Install Webpack. ([Webpack Documentation](https://webpack.js.org/guides/installation/)) 
 
 
 ### Install
