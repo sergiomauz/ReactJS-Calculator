@@ -6,13 +6,11 @@
 - Node JS
 - Webpack
 - Javascript ES6
-- Babel
-- Jest
 
 
 ## Live Demo
 
-Check out the live demo [here](http://localhost:8080)
+Check out the live demo [here](https://sz-calculator-reactjs.herokuapp.com/)
 
 
 ## Getting started
@@ -20,7 +18,6 @@ Check out the live demo [here](http://localhost:8080)
 ### Pre Requisites
 
 - Install Node JS. ([NodeJS Documentation](https://nodejs.org/en/docs/)) 
-- Install Webpack. ([Webpack Documentation](https://webpack.js.org/guides/installation/)) 
 
 
 ### Install
@@ -37,7 +34,7 @@ Check out the live demo [here](http://localhost:8080)
 ### Usage
 
 - Run `npm run server` in your terminal.
-- Open **http://localhost:8080** in your browser.
+- Open **http://localhost:3000** in your browser.
 - Enjoy :)
 
 
