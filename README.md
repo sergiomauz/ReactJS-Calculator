@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-Check out the live demo [here](https://reactjs-calculator-sergiomauz.herokuapp.com/)
+Check out the live demo [here](https://sz-calculator-reactjs.herokuapp.com/)
 
 
 ## Getting started
