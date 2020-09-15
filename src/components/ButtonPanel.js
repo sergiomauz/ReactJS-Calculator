@@ -29,7 +29,6 @@ const ButtonPanel = () => {
     <div>
       {panelTag}
     </div>
-
   );
 };
 
