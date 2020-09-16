@@ -9,15 +9,18 @@ const ButtonPanel = () => {
     4: ['1', '2', '3', '+'],
     5: ['0', '.', '='],
   };
-  const panelTag = [];
+  const panelTags = [];
+
   Object.keys(panelKeys).forEach(key => {
-    panelTag.push(
-      <div key={`row_${key}`}>
+    panelTags.push(
+      <div className="btnRow" key={`row_${key}`}>
         {
-          panelKeys[key].map(btn => (
+          panelKeys[key].map((btn, index) => (
             <Button
               key={`btn_${btn}`}
               buttonName={btn}
+              wide={btn === '0'}
+              color={index !== panelKeys[key].length - 1 ? 'bg-lightgray' : 'bg-orange'}
             />
           ))
         }
@@ -26,8 +29,8 @@ const ButtonPanel = () => {
   });
 
   return (
-    <div>
-      {panelTag}
+    <div className="button-panel">
+      {panelTags}
     </div>
   );
 };

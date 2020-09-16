@@ -1,4 +1,5 @@
 body {
+  background-color: #c1cde1;
   margin: 0;
   font-family:
     -apple-system,
@@ -16,12 +17,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+}
+
+.display-container {
+  background-color: gray;
+  height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.button-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  color: black;
+  font-size: 2rem;
+  border: 1px outset #000;
+}
+
+.btnRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.small {
+  width: 25%;
+}
+
+.wide {
+  width: 50%;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.bg-gray {
+  background-color: lightgray;
 }
