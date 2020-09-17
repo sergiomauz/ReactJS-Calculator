@@ -1,20 +1,20 @@
-import Big from 'big.js';
-import operate from './operate';
+import Operate from './operate';
 
 const calculate = (calculatorData, buttonName) => {
   const { total, next, operation } = calculatorData;
+  let tempOperation = 0;
 
   if (buttonName === '+/-') {
     if (operation) {
       return {
         total,
-        next: (Big(next).times(-1)).toString(),
+        next: Operate(next, -1, 'x').toString(),
         operation,
       };
     }
 
     return {
-      total: (Big(total).times(-1)).toString(),
+      total: Operate(total, -1, 'x').toString(),
       next,
       operation,
     };
@@ -22,15 +22,17 @@ const calculate = (calculatorData, buttonName) => {
 
   if (buttonName === '%') {
     if (operation) {
+      tempOperation = Operate(total, next, operation);
       return {
-        total: (Big(operate(total, next, operation)).div(100)).toString(),
+        total: Operate(tempOperation, 100, '÷').toString(),
         next: null,
         operation: null,
       };
     }
 
+    tempOperation = Operate(total, 100, '÷');
     return {
-      total: (Big(total).div(100).toString()),
+      total: tempOperation.toString(),
       next,
       operation,
     };
@@ -47,7 +49,7 @@ const calculate = (calculatorData, buttonName) => {
   if (buttonName === '=') {
     if (operation) {
       return {
-        total: (parseFloat(operate(total, next, operation))).toString(),
+        total: Operate(total, next, operation).toString(),
         next,
         operation: null,
       };
@@ -62,7 +64,7 @@ const calculate = (calculatorData, buttonName) => {
 
   if (buttonName && total && next) {
     return {
-      total: operate(total, next, operation),
+      total: Operate(total, next, operation),
       next: null,
       operation: buttonName,
     };
