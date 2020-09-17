@@ -8,13 +8,13 @@ const calculate = (calculatorData, buttonName) => {
     if (operation) {
       return {
         total,
-        next: Operate(next, -1, 'x').toString(),
+        next: Operate(next, -1, 'x'),
         operation,
       };
     }
 
     return {
-      total: Operate(total, -1, 'x').toString(),
+      total: Operate(total, -1, 'x'),
       next,
       operation,
     };
@@ -24,7 +24,7 @@ const calculate = (calculatorData, buttonName) => {
     if (operation) {
       tempOperation = Operate(total, next, operation);
       return {
-        total: Operate(tempOperation, 100, '÷').toString(),
+        total: Operate(tempOperation, 100, '÷'),
         next: null,
         operation: null,
       };
@@ -32,7 +32,7 @@ const calculate = (calculatorData, buttonName) => {
 
     tempOperation = Operate(total, 100, '÷');
     return {
-      total: tempOperation.toString(),
+      total: tempOperation,
       next,
       operation,
     };
@@ -49,7 +49,7 @@ const calculate = (calculatorData, buttonName) => {
   if (buttonName === '=') {
     if (operation) {
       return {
-        total: Operate(total, next, operation).toString(),
+        total: Operate(total, next, operation),
         next,
         operation: null,
       };
@@ -64,7 +64,7 @@ const calculate = (calculatorData, buttonName) => {
 
   if (buttonName && total && next) {
     return {
-      total: Operate(total, next, operation),
+      total: Operate(total, next, buttonName),
       next: null,
       operation: buttonName,
     };
