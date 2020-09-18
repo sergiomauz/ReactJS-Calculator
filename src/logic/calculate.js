@@ -1,8 +1,12 @@
 import Operate from './operate';
 
 const calculate = (calculatorData, buttonName) => {
-  const { total, next, operation } = calculatorData;
+  // eslint-disable-next-line
+  let { total, next, operation } = calculatorData;
+  const operationTypes = ['+', '-', '÷', 'x'];
   let tempOperation = 0;
+
+  const isAnOperation = operator => operationTypes.includes(operator);
 
   if (buttonName === '+/-') {
     if (operation) {
@@ -39,6 +43,13 @@ const calculate = (calculatorData, buttonName) => {
   }
 
   if (buttonName === 'AC') {
+    if (next && operation) {
+      return {
+        total,
+        next: '0',
+        operation,
+      };
+    }
     return {
       total: null,
       next: null,
@@ -50,7 +61,7 @@ const calculate = (calculatorData, buttonName) => {
     if (operation) {
       return {
         total: Operate(total, next, operation),
-        next,
+        next: null,
         operation: null,
       };
     }
@@ -62,12 +73,58 @@ const calculate = (calculatorData, buttonName) => {
     };
   }
 
-  if (buttonName && total && next) {
+  if (isAnOperation(buttonName) && ((total && !operation) || (!next && operation))) {
     return {
-      total: Operate(total, next, buttonName),
+      total,
+      next,
+      operation: buttonName,
+    };
+  }
+
+  if (isAnOperation(buttonName) && total && operation) {
+    return {
+      total: Operate(total, next, operation),
       next: null,
       operation: buttonName,
     };
+  }
+
+  if (buttonName.match(/\d/)) {
+    if (!operation) {
+      if (!total || total === '0' || total === 'Error') {
+        total = buttonName;
+      } else {
+        total += buttonName;
+      }
+    } else if (!next || next === '0') {
+      next = buttonName;
+    } else {
+      next += buttonName;
+    }
+
+    return {
+      total,
+      next,
+      operation,
+    };
+  }
+
+  if (buttonName === '.' && (total || next)) {
+    if (!next && !total.includes('.')) {
+      total += '.';
+      return {
+        total,
+        next,
+        operation,
+      };
+    } if (!next.includes('.')) {
+      next += '.';
+      return {
+        total,
+        next,
+        operation,
+      };
+    }
   }
 
   return {

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const Display = props => {
   const { result } = props;
+
   return (
     <div className="display-container">
-      <h2>{result}</h2>
+      <h2>{result || '0'}</h2>
     </div>
   );
 };

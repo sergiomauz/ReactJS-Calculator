@@ -6,8 +6,8 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch (operation) {
     case '÷':
-      if (numberTwo === 0) {
-        return 'infinit';
+      if (numberTwo === '0') {
+        return 'error';
       }
       return nOne.div(nTwo).toString();
     case 'x':
