@@ -73,7 +73,7 @@ const calculate = (calculatorData, buttonName) => {
     };
   }
 
-  if (isAnOperation(buttonName) && total && !operation) {
+  if (isAnOperation(buttonName) && ((total && !operation) || (!next && operation))) {
     return {
       total,
       next,
