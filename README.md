@@ -1,18 +1,18 @@
 # ReactJS - Calculator
 > It is a first practice for learning ReactJS, and a SOLO project required in Microverse Main Curriculum.
 
+![screenshot](https://user-images.githubusercontent.com/36812672/93577489-be6a4180-f961-11ea-93bc-c4f1364b3c16.png)
+
 
 ## Built With
 - Node JS
-- Webpack
+- ReactJS
 - Javascript ES6
-- Babel
-- Jest
 
 
 ## Live Demo
 
-Check out the live demo [here](http://localhost:8080)
+Check out the live demo [here](https://sz-calculator-reactjs.herokuapp.com/)
 
 
 ## Getting started
@@ -20,7 +20,6 @@ Check out the live demo [here](http://localhost:8080)
 ### Pre Requisites
 
 - Install Node JS. ([NodeJS Documentation](https://nodejs.org/en/docs/)) 
-- Install Webpack. ([Webpack Documentation](https://webpack.js.org/guides/installation/)) 
 
 
 ### Install
@@ -29,15 +28,10 @@ Check out the live demo [here](http://localhost:8080)
 - Run `npm install` && `npm run build` in your terminal.
 
 
-### Tests
-
-- Run `npm run test` in your terminal.
-
-
 ### Usage
 
-- Run `npm run server` in your terminal.
-- Open **http://localhost:8080** in your browser.
+- Run `npm start` in your terminal.
+- Open **http://localhost:3000** in your browser.
 - Enjoy :)
 
 
